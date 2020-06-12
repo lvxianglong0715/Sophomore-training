@@ -1,0 +1,463 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            padding: 0%;
+            margin: 0%;
+            background-color: #f6f6f6;
+        }
+        .AppHeader{
+            position: relative;
+            display: -webkit-box;
+            display: -ms-flexbox;
+            display: flex;
+            width: 1480px;
+            height: 52px;
+            padding: 0 16px;
+            margin: 0 auto;
+            -webkit-box-align: center;
+            -ms-flex-align: center;
+            align-items: center;
+            background-color: white;
+
+        }
+        .zhihu{
+            width: 88px;
+            height: 41px;
+            background-image: url("img/首页.png");
+            margin-left: 225px;
+            background-color:white;
+        }
+        .AppHeader-Tabs{
+            border-bottom: 1px solid #f6f6f6;
+            border-bottom: none;
+            display: -webkit-box;
+            display: -ms-flexbox;
+            display: flex;
+            margin: 0 23px;
+        }
+        li {
+            list-style-type: none;
+            background-color: white;
+        }
+        a {
+            color: inherit;
+            text-decoration: none;
+            background-color: white;
+        }
+        .Tabs-item {
+            padding: 0 20px;
+            display: inline-block;
+        }
+        .shouye-link {
+            color: #444;
+            font-weight: 600;
+            font-synthesis: style;
+            font-size: 15px;
+            position: relative;
+            display: inline-block;
+            padding: 14px 0px;
+            font-size: 16px;
+            line-height: 22px;
+            color: #1a1a1a;
+            text-align: center;
+        }
+        .tabs-link {
+            color: #8590a6;
+            font-size: 15px;
+            position: relative;
+            display: inline-block;
+            padding: 14px 0;
+            font-size: 16px;
+            line-height: 22px;
+            text-align: center;
+        }
+        div {
+            display: block;
+        }
+
+        .SearchBar {
+            width: 326px;
+            height: 34px;
+            background-color: #f6f6f6;
+            position: relative;
+            
+        }
+
+        /* 提问按钮 */
+        .Button {
+            display: inline-block;
+            padding: 0 16px;
+            font-size: 14px;
+            line-height: 32px;
+            color: hsl(220, 79%, 50%);
+            text-align: center;
+            cursor: pointer;
+            background: none;
+            border: 1px solid ;
+            border-radius: 3px;
+            color: #fff;
+            background-color: #0084ff;
+            margin-left: 16px;
+        }
+
+        .Input {
+            -webkit-box-flex: 1;
+            -ms-flex: 1 1;
+            flex: 1 1;
+            padding: 0;
+            overflow: hidden;
+            font-family: inherit;
+            font-size: inherit;
+            font-weight: inherit;
+            background: transparent;
+            /* input在输入时不显示边框 */
+            border: 0;
+            outline: none;
+            resize: none;
+            color: #8590a6;
+            height: 24px;
+            line-height: 24px;
+        }
+        input {
+            margin-top: 5px;
+            margin-left: 15px;
+        }
+        .Search-div {
+            width: 47px;
+            height: 27px;
+            background-image: url("img/搜索.png");
+            float: right;
+            margin-top: 5px;
+        }
+        .AppHeader-userInfo {
+            background-color: white;
+        }
+        .lindang {
+            display: inline-block;
+            position: relative;
+            width: 50px;
+            height: 30px;
+            background-image: url("img/铃铛.png");
+            margin-left: 96px;
+            margin-bottom: 15px;
+            background-color: white;
+        }
+        .message {
+            display: inline-block;
+            position: relative;
+            width: 50px;
+            height: 40px;
+            background-image: url("img/信息消息.png");
+            margin-left: 13px;
+            background-repeat: no-repeat;
+            margin-top: 8px;
+            background-color: white;
+            
+        }
+        .AppHeader-profile {
+            display: inline-block;
+            position: relative;
+            width: 50px;
+            height: 40px;
+            background-image: url("img/个人中心.png");
+            margin-left: 15px;
+            background-repeat: no-repeat;
+            margin-bottom: 3px;
+            background-color: white;
+        }
+        .zuixinzhuanti {
+            width: 100%;
+            height: 50px;
+            background-image: url('img/最新专题.png');
+            background-repeat: no-repeat;
+            margin-top: 28px;
+            margin-left: 245px;
+        }
+        .zhuanti {
+            width: 490px;
+            height: 450px;
+            background-color: white;
+            background-repeat: no-repeat;
+            margin-top: 20px;
+        }
+        .zhuanti-div {
+            float: left;
+            width: 100%;
+            background-color: white;
+        }
+        .ExploreSpecialCard-header {
+            display: -webkit-box;
+            display: -ms-flexbox;
+            display: flex;
+            -webkit-box-align: center;
+            -ms-flex-align: center;
+            align-items: center;
+            padding: 30px 0;
+            height: 110px;
+            -webkit-box-sizing: border-box;
+            box-sizing: border-box;
+            border-bottom: 1px solid #ebebeb;
+        }
+        .ExploreSpecialCard-info {
+            -webkit-box-flex: 1;
+            -ms-flex: 1 1;
+            flex: 1 1;
+            box-sizing: border-box;
+            width: 120px;
+        }
+        .ExploreSpecialCard-title {
+            width: 330px;
+            line-height: 28px;
+            max-height: 56px;
+            font-size: 20px;
+            display: -webkit-box;
+            text-overflow: ellipsis;
+            overflow: hidden;
+            -webkit-line-clamp: 2;
+            -webkit-box-orient: vertical;
+            font-weight: 600;
+            font-synthesis: style;
+        }
+        .ExploreSpecialCard-count {
+            height: 17px;
+            line-height: 17px;
+            font-size: 12px;
+            color: #999;
+            background-color: white;
+            
+        }
+        .ExploreSpecialCard-followButton {
+            flex-shrink: 0;
+            margin-left: 20px;
+        }
+        .ExploreFollowButton {
+            width: 140px;
+            height: 50px;
+        }
+        .biaotidiv {
+            flex-shrink: 0;
+            padding: 0 8px;
+            height: 24px;
+            line-height: 24px;
+            font-size: 12px;
+            color: #8590a6;
+            background-color: #f6f6f6;
+            border-radius: 5px;
+            float: left;margin-left: 20px;
+        }
+        .biaoti1 {
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+    <div>
+        <!-- 页眉 -->
+        <div class="AppHeader">
+            <a href="www.zhihu.com">
+                <div class="zhihu"></div>
+            </a>
+            <!-- 首页发现等你来答 -->
+            <ul class="AppHeader-Tabs">
+                <!--首页  -->
+                <li class="Tabs-item">
+                    <a href="https://www.zhihu.com" class="shouye-link">首页</a>
+                </li>
+                <!--发现 -->
+                <li class="Tabs-item">
+                    <a href="https://www.zhihu.com/explore" class="tabs-link" style="color: black;">发现</a>
+                </li>
+                <!--等你来答  -->
+                <li class="Tabs-item">
+                    <a href="https://www.zhihu.com/question/waiting" class="tabs-link">等你来答</a>
+                </li>
+            </ul>
+            <!--页眉搜寻  -->
+            <div class="SearchBar">
+                <input type="text" width="99%" placeholder = "鸣人为什么喜欢小樱" class="Input" maxlength="100" 
+                autocomplete="off" role="combobox" aria-expanded="false" aria-autocomplete="list"
+                aria-activedescendant="AutoComplete2-topSearch--1" id="Popover1-toggle" aria-haspopup="true"
+                aria-owns="Popover1-content">
+                <!-- 搜索按钮 -->
+                <div class="Search-div"></div>
+            </div>
+            <!-- 提问按钮 -->
+            <button type="button" class="Button">提问</button>
+            <!-- 铃铛信息个人中心 -->
+            <div class="AppHeader-userInfo">
+                <!-- 铃铛 -->
+                <div class="lindang"></div>
+                <!-- 信息 -->
+                <div class="message"></div>
+                <!-- 个人中心 -->
+                <div class="AppHeader-profile"></div>
+            </div>
+        </div>
+        <!-- 主心 -->
+        <div class="heart" style="width: 1250px;height: 1020px;">
+            <!-- 最新专题 -->
+            <div class="zuixinzhuanti"></div>
+            <!-- 专题1 -->
+            <div class="zhuanti" style=" float: left;margin-left: 245px;border-radius: 4px;">
+                <!--图片  -->
+                <div class="zhuanti-div" style="background-image: url('img/专题1.png');height: 200px;"></div>
+                <!--财经热点  -->
+                <div class="zhuanti-div ExploreSpecialCard-header">
+                    <div class="ExploreSpecialCard-info" style="background-color: white;">
+                        <a class="ExploreSpecialCard-title" style="margin-left: 20px;">财经热点</a>
+                        <div class="ExploreSpecialCard-count" style="background-color: white;margin-left: 20px;margin-top: 20px;">
+                            <span style="background-color: white;">更新</span>
+                            <span style="background-color: white;">"618,972"</span>
+                        </div>
+                    </div>
+                    <div class="ExploreSpecialCard-followButton">
+                        <div class="ExploreFollowButton" style="background-image: url('img/关注专题.png');"></div>
+                    </div>
+                </div>
+                <!--新闻 -->
+                <div class="zhuanti-div">
+                    <div class="biaoti1">
+                        <div class="biaotidiv">自由贸易港</div>
+                        <span style="float: left; margin-left: 20px;">海南全岛封关，执行零关税政策，按香港模式...</span>
+                    </div>
+                </div>
+                <div class="zhuanti-div">
+                    <div class="biaoti1">
+                        <div class="biaotidiv">自由贸易港</div>
+                        <span style="float: left; margin-left: 20px;">海南全岛封关，执行零关税政策，按香港模式...</span>
+                    </div>
+                </div>
+                <div class="zhuanti-div">
+                    <div class="biaoti1">
+                        <div class="biaotidiv">自由贸易港</div>
+                        <span style="float: left; margin-left: 20px;">海南全岛封关，执行零关税政策，按香港模式...</span>
+                    </div>
+                </div>
+            </div>
+
+
+
+            <!-- 专题2 -->
+            <div class="zhuanti" style="float: right;box-sizing: border-box;margin-left: 10px;border-radius: 4px;">
+                <!--图片  -->
+                <div class="zhuanti-div" style="background-image: url('img/专题1.png');height: 200px;"></div>
+                <!--财经热点  -->
+                <div class="zhuanti-div ExploreSpecialCard-header">
+                    <div class="ExploreSpecialCard-info" style="background-color: white;">
+                        <a class="ExploreSpecialCard-title" style="margin-left: 20px;">财经热点</a>
+                        <div class="ExploreSpecialCard-count" style="background-color: white;margin-left: 20px;margin-top: 20px;">
+                            <span style="background-color: white;">更新</span>
+                            <span style="background-color: white;">"618,972"</span>
+                        </div>
+                    </div>
+                    <div class="ExploreSpecialCard-followButton">
+                        <div class="ExploreFollowButton" style="background-image: url('img/关注专题.png');"></div>
+                    </div>
+                </div>
+                <!--新闻 -->
+                <div class="zhuanti-div">
+                    <div class="biaoti1">
+                        <div class="biaotidiv">自由贸易港</div>
+                        <span style="float: left; margin-left: 20px;">海南全岛封关，执行零关税政策，按香港模式...</span>
+                    </div>
+                </div>
+                <div class="zhuanti-div">
+                    <div class="biaoti1">
+                        <div class="biaotidiv">自由贸易港</div>
+                        <span style="float: left; margin-left: 20px;">海南全岛封关，执行零关税政策，按香港模式...</span>
+                    </div>
+                </div>
+                <div class="zhuanti-div">
+                    <div class="biaoti1">
+                        <div class="biaotidiv">自由贸易港</div>
+                        <span style="float: left; margin-left: 20px;">海南全岛封关，执行零关税政策，按香港模式...</span>
+                    </div>
+                </div>
+            </div>
+
+
+            <!-- 专题3 -->
+            <div class="zhuanti" style="float: left;box-sizing: border-box;margin-left: 245px;margin-top: 20px;border-radius: 4px;">
+                <!--图片  -->
+                <div class="zhuanti-div" style="background-image: url('img/专题1.png');height: 200px;"></div>
+                <!--财经热点  -->
+                <div class="zhuanti-div ExploreSpecialCard-header">
+                    <div class="ExploreSpecialCard-info" style="background-color: white;">
+                        <a class="ExploreSpecialCard-title" style="margin-left: 20px;">财经热点</a>
+                        <div class="ExploreSpecialCard-count" style="background-color: white;margin-left: 20px;margin-top: 20px;">
+                            <span style="background-color: white;">更新</span>
+                            <span style="background-color: white;">"618,972"</span>
+                        </div>
+                    </div>
+                    <div class="ExploreSpecialCard-followButton">
+                        <div class="ExploreFollowButton" style="background-image: url('img/关注专题.png');"></div>
+                    </div>
+                </div>
+                <!--新闻 -->
+                <div class="zhuanti-div">
+                    <div class="biaoti1">
+                        <div class="biaotidiv">自由贸易港</div>
+                        <span style="float: left; margin-left: 20px;">海南全岛封关，执行零关税政策，按香港模式...</span>
+                    </div>
+                </div>
+                <div class="zhuanti-div">
+                    <div class="biaoti1">
+                        <div class="biaotidiv">自由贸易港</div>
+                        <span style="float: left; margin-left: 20px;">海南全岛封关，执行零关税政策，按香港模式...</span>
+                    </div>
+                </div>
+                <div class="zhuanti-div">
+                    <div class="biaoti1">
+                        <div class="biaotidiv">自由贸易港</div>
+                        <span style="float: left; margin-left: 20px;">海南全岛封关，执行零关税政策，按香港模式...</span>
+                    </div>
+                </div>
+            </div>
+
+
+            <!-- 专题4 -->
+            <div class="zhuanti" style="float: right;box-sizing: border-box;margin-left: 10px;border-radius: 4px;">
+                <!--图片  -->
+                <div class="zhuanti-div" style="background-image: url('img/专题1.png');height: 200px;"></div>
+                <!--财经热点  -->
+                <div class="zhuanti-div ExploreSpecialCard-header">
+                    <div class="ExploreSpecialCard-info" style="background-color: white;">
+                        <a class="ExploreSpecialCard-title" style="margin-left: 20px;">财经热点</a>
+                        <div class="ExploreSpecialCard-count" style="background-color: white;margin-left: 20px;margin-top: 20px;">
+                            <span style="background-color: white;">更新</span>
+                            <span style="background-color: white;">"618,972"</span>
+                        </div>
+                    </div>
+                    <div class="ExploreSpecialCard-followButton">
+                        <div class="ExploreFollowButton" style="background-image: url('img/关注专题.png');"></div>
+                    </div>
+                </div>
+                <!--新闻 -->
+                <div class="zhuanti-div">
+                    <div class="biaoti1">
+                        <div class="biaotidiv">自由贸易港</div>
+                        <span style="float: left; margin-left: 20px;">海南全岛封关，执行零关税政策，按香港模式...</span>
+                    </div>
+                </div>
+                <div class="zhuanti-div">
+                    <div class="biaoti1">
+                        <div class="biaotidiv">自由贸易港</div>
+                        <span style="float: left; margin-left: 20px;">海南全岛封关，执行零关税政策，按香港模式...</span>
+                    </div>
+                </div>
+                <div class="zhuanti-div">
+                    <div class="biaoti1">
+                        <div class="biaotidiv">自由贸易港</div>
+                        <span style="float: left; margin-left: 20px;">海南全岛封关，执行零关税政策，按香港模式...</span>
+                    </div>
+                </div>
+            </div>
+        </div>    
+    </div>
+</body>
+</html>
