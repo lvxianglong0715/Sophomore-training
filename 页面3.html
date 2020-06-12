@@ -1,0 +1,774 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            padding: 0%;
+            margin: 0%;
+            background-color: #f6f6f6;
+        }
+        .AppHeader{
+            position: relative;
+            display: -webkit-box;
+            display: -ms-flexbox;
+            display: flex;
+            width: 100%;
+            height: 52px;
+            padding: 0 16px;
+            margin: 0 auto;
+            -webkit-box-align: center;
+            -ms-flex-align: center;
+            align-items: center;
+            background-color: white;
+
+        }
+        .zhihu{
+            width: 88px;
+            height: 41px;
+            background-image: url("img/首页.png");
+            margin-left: 225px;
+            background-color:white;
+        }
+        .AppHeader-Tabs{
+            border-bottom: 1px solid #f6f6f6;
+            border-bottom: none;
+            display: -webkit-box;
+            display: -ms-flexbox;
+            display: flex;
+            margin: 0 23px;
+        }
+        li {
+            list-style-type: none;
+            background-color: white;
+        }
+        a {
+            color: inherit;
+            text-decoration: none;
+            background-color: white;
+        }
+        .Tabs-item {
+            padding: 0 20px;
+            display: inline-block;
+        }
+        .shouye-link {
+            color: #444;
+            font-weight: 600;
+            font-synthesis: style;
+            font-size: 15px;
+            position: relative;
+            display: inline-block;
+            padding: 14px 0px;
+            font-size: 16px;
+            line-height: 22px;
+            color: #1a1a1a;
+            text-align: center;
+        }
+        .tabs-link {
+            color: #8590a6;
+            font-size: 15px;
+            position: relative;
+            display: inline-block;
+            padding: 14px 0;
+            font-size: 16px;
+            line-height: 22px;
+            text-align: center;
+        }
+        div {
+            display: block;
+        }
+
+        .SearchBar {
+            width: 326px;
+            height: 34px;
+            background-color: #f6f6f6;
+            position: relative;
+            
+        }
+
+        /* 提问按钮 */
+        .Button {
+            display: inline-block;
+            padding: 0 16px;
+            font-size: 14px;
+            line-height: 32px;
+            color: hsl(220, 79%, 50%);
+            text-align: center;
+            cursor: pointer;
+            background: none;
+            border: 1px solid ;
+            border-radius: 3px;
+            color: #fff;
+            background-color: #0084ff;
+            margin-left: 16px;
+        }
+
+        .Input {
+            -webkit-box-flex: 1;
+            -ms-flex: 1 1;
+            flex: 1 1;
+            padding: 0;
+            overflow: hidden;
+            font-family: inherit;
+            font-size: inherit;
+            font-weight: inherit;
+            background: transparent;
+            /* input在输入时不显示边框 */
+            border: 0;
+            outline: none;
+
+
+            resize: none;
+            color: #8590a6;
+            height: 24px;
+            line-height: 24px;
+        }
+        input {
+            margin-top: 5px;
+            margin-left: 15px;
+        }
+        .Search-div {
+            width: 47px;
+            height: 27px;
+            background-image: url("img/搜索.png");
+            float: right;
+            margin-top: 5px;
+        }
+        .AppHeader-userInfo {
+            background-color: white;
+        }
+        .lindang {
+            display: inline-block;
+            position: relative;
+            width: 50px;
+            height: 30px;
+            background-image: url("img/铃铛.png");
+            margin-left: 96px;
+            margin-bottom: 15px;
+            background-color: white;
+        }
+        .message {
+            display: inline-block;
+            position: relative;
+            width: 50px;
+            height: 40px;
+            background-image: url("img/信息消息.png");
+            margin-left: 13px;
+            background-repeat: no-repeat;
+            margin-top: 8px;
+            background-color: white;
+            
+        }
+        .AppHeader-profile {
+            display: inline-block;
+            position: relative;
+            width: 50px;
+            height: 40px;
+            background-image: url("img/个人中心.png");
+            margin-left: 15px;
+            background-repeat: no-repeat;
+            margin-bottom: 3px;
+            background-color: white;
+        }
+        .heart {
+            width: 1062px;
+            height: 1000px;
+            background-color: #f6f6f6;
+            margin-top: 13px;
+            margin-left: 240px;
+        }
+        .content {
+            position: relative;
+            display: inline-block;
+            width: 750px;
+            height: 100%;
+            background-color: white;
+        }
+        .TopTabs {
+            display: flex;
+            border-bottom: 1px solid #f6f6f6;
+            height: 38px;
+            background-color: white;
+            display: block;
+            margin-left: 23px;
+            padding-top: 20px;
+        }
+        .HotListNav {
+            display: inline-block;
+            display: flex;
+            -webkit-box-pack: justify;
+            -ms-flex-pack: justify;
+            justify-content: space-between;
+            -webkit-box-align: center;
+            -ms-flex-align: center;
+            align-items: center;
+            padding: 16px 20px;
+            height: 20px;
+            border: 1px solid #f6f6f6;
+            border-width: 0 0 1px;
+            background-color: white;
+        }
+        .HotItem {
+            background: #fff;
+            display: inline-block;
+            display: flex;
+            position: relative;
+            height: 141px;
+            background-color: pink;
+            border: .5px solid #f6f6f6;
+        }
+
+        /* 右侧边栏 */
+        .Right-sidebar {
+            position: relative;
+            display: inline-block;
+            width: 303px;
+            height: 100%;
+            background-color: #f6f6f6;
+            margin-left: 4px;
+        }
+        .Card {
+            margin-bottom: 10px;
+            background: white;
+            overflow: hidden;
+            border-radius: 2px;
+            box-shadow: 0 1px 3px rgba(26,26,26,.1);
+            box-sizing: border-box;
+        }
+
+        .NewGlobalWrite {
+            display: inline-block;
+            display: flex;
+            flex-direction: column;
+            height: 150px;
+        }
+        .CreatorEntrance {
+            display: inline-block;
+            display: flex;
+            flex-direction: column;
+            height: 50px;
+        }
+        .GlobalSideBar-category {
+            display: inline-block;
+            display: flex;
+            flex-direction: column;
+            height: 170px;
+        }
+        .GlobalSideBar {
+            display: inline-block;
+            display: flex;
+            flex-direction: column;
+            height: 170px;
+        }
+        .GlobalSideBar {
+            display: inline-block;
+            display: flex;
+            flex-direction: column;
+            height: 300px;
+        }
+        .TopTabs2 {
+            background-color: white;
+        }
+
+        .TopstoryTabs-link.is-active {
+            color: #0084ff;
+            font-weight: 500;
+        }
+        .TopstoryTabs-link {
+            -webkit-box-align: center;
+            -ms-flex-align: center;
+            font-size: 16px;
+            margin: 0 22px;
+        }
+        .HotListNav-item.is-active {
+            font-weight: 500;
+            color: #0084ff;
+            background-color: rgba(0,132,255,.1);
+        }
+        .HotListNav-item {
+            margin: 0 4px;
+            height: 30px;
+            -webkit-box-sizing: border-box;
+            box-sizing: border-box;
+            padding: 5px 20px;
+            border-radius: 2px;
+            font-size: 14px;
+            line-height: 20px;
+            color: #646464;
+            background-color: #f6f6f6;
+        }
+        .zhankai {
+            position: absolute;
+            top: 50%;
+            margin-top: -18px;
+            margin-left: 640px;
+            height: 35px;
+            width: 70px;
+            background-image: url("img/展开.png");
+            background-repeat: no-repeat;
+            margin-bottom: 15px;
+        }
+        .list {
+            float: left;
+        }
+        .HotItem-hot {
+            color: #ff9607;
+        }
+        .HotItem-rank {
+            margin-top: 17px;
+            line-height: 1.6;
+            font-size: 18px;
+            font-weight: 600;
+            font-synthesis: style;
+            margin-left: 23px;
+            background-color: white;
+        }
+        .HotItem-content {
+            -webkit-box-flex: 1;
+            -ms-flex: 1 1;
+            flex: 1 1;
+            overflow: hidden;
+            margin-top: 17px;
+            background-color: white;
+        }
+        .HotItem-title {
+            color: #1a1a1a;
+            font-size: 18px;
+            line-height: 28px;
+            max-height: 56px;
+            display: -webkit-box;
+            text-overflow: ellipsis;
+            overflow: hidden;
+            -webkit-line-clamp: 2;
+            -webkit-box-orient: vertical;
+            font-weight: 600;
+            font-synthesis: style;
+            margin-left: 24px;
+            background-color: white;
+        }
+        .fire {
+            height: 21px;
+            width: 120px;
+            margin-left: 23px;
+            margin-top: 65px;
+            background-color: white;
+            background-image: url("img/小火苗.png");
+            background-repeat: no-repeat;
+        }
+        .HotItem-metrics {
+            display: -webkit-box;
+            display: -ms-flexbox;
+            display: flex;
+            -webkit-box-align: center;
+            -ms-flex-align: center;
+            align-items: center;
+            color: #8590a6;
+            font-size: 14px;
+            height: 16px;
+            margin-top: 8px;
+            background-color: white;
+        }
+        .share {
+            height: 21px;
+            width: 100px;
+            background-image: url("img/分享.png");
+            background-repeat: no-repeat;
+            background-color: white;
+        }
+        .HotItem-img {
+            display: block;
+            height: 105px;
+            width: 190px;
+            margin-left: 222px;
+            margin-top: 20px;
+            position: relative;
+            background-image: url("img/游戏.png");
+            background-repeat: no-repeat;
+        }
+        .HotItem {
+            background-color: white;
+        }
+        .four-write {
+            width: 293px;
+            height: 100px;
+            background-color: white;            
+        }
+        .write {
+            float: left;
+        }
+        .wenti {            
+            padding-top: -10px;
+        }
+        .fourswrite {
+            width: 70px;
+            height: 84px;
+            margin-top: 15px;
+        }
+        .huida-caogao {
+            width: 100%;
+            height: 100%;
+            background-color: white;
+            border-top: 1px solid #f6f6f6;
+        }
+        .huida {
+            width: 50%;
+            height: 100%;
+            border-right: 1px solid #f6f6f6;   
+            background-color: white;         
+        }
+        .huida-img {
+            margin-top: 10px;
+            margin-left: 30px;
+            width: 80px;
+            height: 30px;
+            background-image: url('img/回答.png');
+            background-repeat: no-repeat;
+        }
+        .caogao {
+            float: right;
+            background-color: white;
+        }
+        .caogao-img {
+            margin-top: 10px;
+            margin-right: 30px;
+            width: 80px;
+            height: 30px;
+            background-image: url('img/草稿.png');
+        }
+        .chuangzuozhe-img {
+            width: 220px;
+            height: 50px;
+            margin-top: -10px;
+            background-image: url('img/创作者.png');
+            background-repeat: no-repeat;
+            background-color: white;
+        }
+        .qukaitong-img {
+            width: 100px;
+            height: 30px;
+            margin-right: 30px;
+            margin-top: 10px;
+            background-image: url('img/去开通.png');
+            background-repeat: no-repeat;
+            background-color: white;
+        }
+        .chuangzuo-kaitong {
+            background-color: white;
+        }
+        .chuangzuo {
+            width: 50%;
+            height: 100%;
+            background-color: white;       
+        }
+        .kaitong {
+            float: right;
+            background-color: white;  
+        }
+        .live {
+            width: 26%;
+            height: 45%;
+            background-repeat: no-repeat;
+            margin-left: 20px;
+            margin-top: 10px;
+            background-color: white;
+        }
+        .shuliang {
+            width: 80px;
+            height: 30px;
+            background-color: white;
+        }
+        .shuliang2 {
+            height: 30px;
+            width: 38px;
+            background-image: url("img/数量.png");           
+        }
+        .yu-e {
+            float: left;
+            width: 100%;
+            height: 30px;          
+            background-repeat: no-repeat;
+            margin-left: 20px;
+            margin-top: 10px;
+        }
+        .redanghang {
+            width: 100%;
+            height: 70px;
+            border-bottom: 1px solid #f6f6f6;
+            background-color: white;
+            border-bottom: 1px solid #f6f6f6;
+        }
+        .biaoqian {
+            width: 130px;
+            height: 42px;
+            margin-top: 15px;
+            margin-left: 15px;
+            float: left;
+            background-repeat: no-repeat;
+            background-color: white;
+        }
+        .biaoti-div {
+            width: 100%;
+            height: 100%;
+            background-color: white;
+        }
+        .biaoti {
+            width: 100%;
+            height: 116px;
+            border-bottom: 1px solid #f6f6f6;
+            background-color: white;
+        }
+        .xiaobt {
+            color: #1a1a1a;
+            font-size: 18px;
+            line-height: 27px;
+            margin-bottom: 8px;
+            font-weight: 600;
+            font-synthesis: style;
+            background-color: white;
+            margin-top: 15px;
+            margin-left: 10px;
+        }
+        .write2 {
+            width: 500px;
+            height: 60px;
+            background-color: white;
+            margin-top: 10px;
+            margin-left: 10px;
+            float: left;
+        }
+        .write1 {
+            width: 140px;
+            height: 50px;
+            float: left;
+            background-repeat: no-repeat;
+            background-color: white;
+        }
+        .time {
+            float: right;
+            margin-right: 20px;
+            width: 180px;
+            height: 50px;
+            background-color: white;
+            background-repeat: no-repeat;
+            margin-top: 25px;
+            color: #8590a6;
+            font-size: 14px;
+        }
+    </style>
+</head>
+<body>
+    <div>
+        <!-- 页眉 -->
+        <div class="AppHeader">
+            <a href="www.zhihu.com">
+                <div class="zhihu"></div>
+            </a>
+            <!-- 首页发现等你来答 -->
+            <ul class="AppHeader-Tabs">
+                <!--首页  -->
+                <li class="Tabs-item">
+                    <a href="https://www.zhihu.com" class="shouye-link">首页</a>
+                </li>
+                <!--发现 -->
+                <li class="Tabs-item">
+                    <a href="https://www.zhihu.com/explore" class="tabs-link">发现</a>
+                </li>
+                <!--等你来答  -->
+                <li class="Tabs-item">
+                    <a href="https://www.zhihu.com/question/waiting" class="tabs-link">等你来答</a>
+                </li>
+            </ul>
+            <!--页眉搜寻  -->
+            <div class="SearchBar">
+                <input type="text" width="99%" placeholder = "鸣人为什么喜欢小樱" class="Input" maxlength="100" 
+                autocomplete="off" role="combobox" aria-expanded="false" aria-autocomplete="list"
+                aria-activedescendant="AutoComplete2-topSearch--1" id="Popover1-toggle" aria-haspopup="true"
+                aria-owns="Popover1-content">
+                <!-- 搜索按钮 -->
+                <div class="Search-div"></div>
+            </div>
+            <!-- 提问按钮 -->
+            <button type="button" class="Button">提问</button>
+            <!-- 铃铛信息个人中心 -->
+            <div class="AppHeader-userInfo">
+                <!-- 铃铛 -->
+                <div class="lindang"></div>
+                <!-- 信息 -->
+                <div class="message"></div>
+                <!-- 个人中心 -->
+                <div class="AppHeader-profile"></div>
+            </div>
+        </div>    
+        <!-- 主心 -->
+        <div class="heart">
+            <div class="content">
+                <!-- 导航 -->
+                <div class="redanghang">
+                    <div class="biaoqian" style="background-image: url('img/人气问题.png');"></div>
+                    <div class="biaoqian" style="background-image: url('img/潜力好问.png');"></div>
+                    <div class="biaoqian" style="background-image: url('img/新问题.png');"></div>
+                    <div class="biaoqian" style="background-image: url('img/人人答.png');"></div>
+                </div>
+                <!--正文  -->
+                <div class="biaoti-div">
+                    <!-- 第一个 -->
+                    <div class="biaoti">
+                        <div class="xiaobt">准备大二了，现在报名专升本来得及吗?</div>
+                        <div class="write2">
+                            <!-- 写回答 -->
+                            <div class="write1" style="background-image: url('img/写回答.png');"></div>
+                            <!-- 关注问题 -->
+                            <div class="write1" style="background-image: url('img/关注问题.png');margin-top: 10px;"></div>
+                            <!-- 稍后答 -->
+                            <div class="write1" style="background-image: url('img/稍后答.png');margin-top: 10px;"></div>
+                        </div>
+                        <div class="time">74个回答·15,290个浏览</div>
+                    </div>
+                   
+                    <!-- 第一个 -->
+                    <div class="biaoti">
+                        <div class="xiaobt">准备大二了，现在报名专升本来得及吗?</div>
+                        <div class="write2">
+                            <!-- 写回答 -->
+                            <div class="write1" style="background-image: url('img/写回答.png');"></div>
+                            <!-- 关注问题 -->
+                            <div class="write1" style="background-image: url('img/关注问题.png');margin-top: 10px;"></div>
+                            <!-- 稍后答 -->
+                            <div class="write1" style="background-image: url('img/稍后答.png');margin-top: 10px;"></div>
+                        </div>
+                        <div class="time">74个回答·15,290个浏览</div>
+                    </div>
+
+                    <!-- 第一个 -->
+                    <div class="biaoti">
+                        <div class="xiaobt">准备大二了，现在报名专升本来得及吗?</div>
+                        <div class="write2">
+                            <!-- 写回答 -->
+                            <div class="write1" style="background-image: url('img/写回答.png');"></div>
+                            <!-- 关注问题 -->
+                            <div class="write1" style="background-image: url('img/关注问题.png');margin-top: 10px;"></div>
+                            <!-- 稍后答 -->
+                            <div class="write1" style="background-image: url('img/稍后答.png');margin-top: 10px;"></div>
+                        </div>
+                        <div class="time">74个回答·15,290个浏览</div>
+                    </div>
+
+                    <!-- 第一个 -->
+                    <div class="biaoti">
+                        <div class="xiaobt">准备大二了，现在报名专升本来得及吗?</div>
+                        <div class="write2">
+                            <!-- 写回答 -->
+                            <div class="write1" style="background-image: url('img/写回答.png');"></div>
+                            <!-- 关注问题 -->
+                            <div class="write1" style="background-image: url('img/关注问题.png');margin-top: 10px;"></div>
+                            <!-- 稍后答 -->
+                            <div class="write1" style="background-image: url('img/稍后答.png');margin-top: 10px;"></div>
+                        </div>
+                        <div class="time">74个回答·15,290个浏览</div>
+                    </div>
+
+                    <!-- 第一个 -->
+                    <div class="biaoti">
+                        <div class="xiaobt">准备大二了，现在报名专升本来得及吗?</div>
+                        <div class="write2">
+                            <!-- 写回答 -->
+                            <div class="write1" style="background-image: url('img/写回答.png');"></div>
+                            <!-- 关注问题 -->
+                            <div class="write1" style="background-image: url('img/关注问题.png');margin-top: 10px;"></div>
+                            <!-- 稍后答 -->
+                            <div class="write1" style="background-image: url('img/稍后答.png');margin-top: 10px;"></div>
+                        </div>
+                        <div class="time">74个回答·15,290个浏览</div>
+                    </div>
+
+                </div>
+            </div>
+
+            <!-- 右侧边栏 -->
+            <div class="Right-sidebar" style="display: block; float: right;">
+                <!-- 卡片1 -->
+                <div class="Card NewGlobalWrite" style="position: relative;display: block;">
+                    <div class="four-write write">
+                        <div class="wenti write fourswrite" style="background-image: url('img/回答问题.png');"></div>
+                        <div class="shipin write fourswrite" style="background-image: url('img/发视频.png');margin-left: 10px;"></div>
+                        <div class="wenzhang write fourswrite" style="background-image: url('img/写文章.png');"></div>
+                        <div class="xiangfa write fourswrite" style="background-image: url('img/写想法.png');"></div>
+                    </div>
+                    <div class="huida-caogao write">
+                        <div class="write chuangzuo">
+                            <div class="huida-img"></div>                           
+                        </div>          
+                        <div class="kaitong">
+                            <div class="caogao-img"></div>
+                        </div>
+                    </div>
+                </div>
+                <!-- 卡片2 -->
+                <div class="Card CreatorEntrance" >                   
+                    <div class="chuangzuo-kaitong write">
+                        <div class="write huida">
+                            <div class="chuangzuozhe-img"></div>                           
+                        </div>          
+                        <div class="caogao">
+                            <div class="qukaitong-img"></div>
+                        </div>
+                    </div>
+                </div>
+                <!-- 卡片3 -->
+                <div class="Card GlobalSideBar-category" style="position: relative;display: block;">
+                    <div style="float: left; background-image: url('img/live.png');" class="live"></div>
+                    <div style="float: left; background-image: url('img/书店.png');" class="live"></div>
+                    <div style="float: left; background-image: url('img/圆桌.png');" class="live"></div>
+                    <div style="float: left; background-image: url('img/专栏.png');" class="live"></div>
+                    <div style="float: left; background-image: url('img/付费咨询.png');" class="live"></div>
+                    <div style="float: left; background-image: url('img/百科.png');" class="live"></div>
+                </div>
+                <!-- 卡片4 -->
+                <div class="Card GlobalSideBar" style="position: relative;display: block;">
+                    <!-- 收藏 -->
+                    <div class="yu-e" style="position: relative;display: block;background-color: white;background-image: url('img/我的收藏.png');">
+                        <div style="margin-left: 40px; float: left; background-color: white;">我的收藏</div>
+                        <div class="shuliang" style="margin-left: 68px; float: right; margin-top: -5px;">
+                            <div class="shuliang2"></div>
+                        </div>
+                    </div>
+                    <!-- 关注的问题 -->
+                    <div class="yu-e" style="position: relative;display: block;background-color: white;background-image: url('img/我关注的问题.png');">
+                        <div style="margin-left: 40px; float: left; background-color: white;">我关注的问题</div>
+                        <div class="shuliang" style="margin-left: 68px; float: right; margin-top: -5px;">
+                            <div class="shuliang2"></div>
+                        </div>
+                    </div>
+                    <!-- 我的邀请 -->
+                    <div class="yu-e" style="position: relative;display: block;background-color: white;background-image: url('img/我的邀请.png');">
+                        <div style="margin-left: 40px; float: left; background-color: white;">我的邀请</div>
+                        <div class="shuliang" style="margin-left: 68px; float: right; margin-top: -5px;">
+                            <div class="shuliang2"></div>
+                        </div>
+                    </div>
+                    <!-- 我的余额 -->
+                    <div class="yu-e" style="position: relative;display: block;background-color: white;background-image: url('img/我的余额.png');">
+                        <div style="margin-left: 40px; float: left; background-color: white;">我的余额</div>                        
+                    </div>
+                    <!-- 我的站务 -->
+                    <div class="yu-e" style="position: relative;display: block;background-color: white;background-image: url('img/站务中心.png');">
+                        <div style="margin-left: 40px; float: left; background-color: white;">站务中心</div>                        
+                    </div>
+                    <!-- 我的帮助 -->
+                    <div class="yu-e" style="position: relative;display: block;background-color: white;background-image: url('img/帮助中心.png');">
+                        <div style="margin-left: 40px; float: left; background-color: white;">帮助中心</div>                        
+                    </div>
+                    <!-- 我的版权 -->
+                    <div class="yu-e" style="position: relative;display: block;background-color: white;background-image: url(img/版权服务中心.png);">
+                        <div style="margin-left: 40px; float: left; background-color: white;">版权服务中心</div>                       
+                    </div>
+                    
+                </div>
+            </div>
+        </div>
+    </div>
+
+</body>
+</html>
