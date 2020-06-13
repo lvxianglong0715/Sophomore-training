@@ -1,0 +1,511 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            padding: 0%;
+            margin: 0%;
+            background-color: #f6f6f6;
+        }
+        .AppHeader{
+            position: relative;
+            display: -webkit-box;
+            display: -ms-flexbox;
+            display: flex;
+            width: 100%;
+            height: 52px;
+            padding: 0 16px;
+            margin: 0 auto;
+            -webkit-box-align: center;
+            -ms-flex-align: center;
+            align-items: center;
+            background-color: white;
+
+        }
+        .zhihu{
+            width: 88px;
+            height: 41px;
+            background-image: url("img/首页.png");
+            margin-left: 225px;
+            background-color:white;
+        }
+        .AppHeader-Tabs{
+            border-bottom: 1px solid #f6f6f6;
+            border-bottom: none;
+            display: -webkit-box;
+            display: -ms-flexbox;
+            display: flex;
+            margin: 0 23px;
+        }
+        li {
+            list-style-type: none;
+            background-color: white;
+        }
+        a {
+            color: inherit;
+            text-decoration: none;
+            background-color: white;
+        }
+        .Tabs-item {
+            padding: 0 20px;
+            display: inline-block;
+        }
+        .shouye-link {
+            color: #444;
+            font-weight: 600;
+            font-synthesis: style;
+            font-size: 15px;
+            position: relative;
+            display: inline-block;
+            padding: 14px 0px;
+            font-size: 16px;
+            line-height: 22px;
+            color: #1a1a1a;
+            text-align: center;
+        }
+        .tabs-link {
+            color: #8590a6;
+            font-size: 15px;
+            position: relative;
+            display: inline-block;
+            padding: 14px 0;
+            font-size: 16px;
+            line-height: 22px;
+            text-align: center;
+        }
+        div {
+            display: block;
+        }
+
+        .SearchBar {
+            width: 326px;
+            height: 34px;
+            background-color: #f6f6f6;
+            position: relative;
+            
+        }
+
+        /* 提问按钮 */
+        .Button {
+            display: inline-block;
+            padding: 0 16px;
+            font-size: 14px;
+            line-height: 32px;
+            color: hsl(220, 79%, 50%);
+            text-align: center;
+            cursor: pointer;
+            background: none;
+            border: 1px solid ;
+            border-radius: 3px;
+            color: #fff;
+            background-color: #0084ff;
+            margin-left: 16px;
+        }
+
+        .Input {
+            -webkit-box-flex: 1;
+            -ms-flex: 1 1;
+            flex: 1 1;
+            padding: 0;
+            overflow: hidden;
+            font-family: inherit;
+            font-size: inherit;
+            font-weight: inherit;
+            background: transparent;
+            /* input在输入时不显示边框 */
+            border: 0;
+            outline: none;
+
+
+            resize: none;
+            color: #8590a6;
+            height: 24px;
+            line-height: 24px;
+        }
+        input {
+            margin-top: 5px;
+            margin-left: 15px;
+        }
+        .Search-div {
+            width: 47px;
+            height: 27px;
+            background-image: url("img/搜索.png");
+            float: right;
+            margin-top: 5px;
+        }
+        .AppHeader-userInfo {
+            background-color: white;
+        }
+        .lindang {
+            display: inline-block;
+            position: relative;
+            width: 50px;
+            height: 30px;
+            background-image: url("img/铃铛.png");
+            margin-left: 96px;
+            margin-bottom: 15px;
+            background-color: white;
+        }
+        .message {
+            display: inline-block;
+            position: relative;
+            width: 50px;
+            height: 40px;
+            background-image: url("img/信息消息.png");
+            margin-left: 13px;
+            background-repeat: no-repeat;
+            margin-top: 8px;
+            background-color: white;
+            
+        }
+        .AppHeader-profile {
+            display: inline-block;
+            position: relative;
+            width: 50px;
+            height: 40px;
+            background-image: url("img/个人中心.png");
+            margin-left: 15px;
+            background-repeat: no-repeat;
+            margin-bottom: 3px;
+            background-color: white;
+        }
+        .content {
+            width: 1060px;
+            height: 1300px;
+            background-color:white;
+            margin-left: 245px;
+            margin-top: 10px;
+        }
+        .fenmian-img {
+            width: 1060px;
+            height: 130px;
+            background-color:#AAAAAA;
+            
+        }
+        .bianji {
+            width: 1060;
+            height: 130px;
+            background-color: white;
+        }
+        .fenmian-img1 {
+            float: right;
+            margin-top: 30px;
+            width: 200px;
+            height: 50px;
+            background-image:url('img/上传封面图片.png') ;
+            background-repeat: no-repeat;
+            background-color: #AAAAAA;
+        }
+        .name {
+            font-size: 26px;
+            font-weight: 600;
+            font-synthesis: style;
+            line-height: 30px;
+            padding-top: 15px;
+            margin-left: 280px;
+            box-sizing: border-box;
+            background-color: white;
+        }
+        .xiangxi {
+            display: inline-block;
+            width: 200px;
+            height: 30px;
+            margin-left: 50px;
+            background-image: url('img/查看详细资料.png');
+            background-repeat: no-repeat;
+            margin-top: 30px;
+            background-color: white;
+        }
+        .touxiang1 {
+            float: left;
+            width: 208px;
+            height: 200px;
+            background-image: url('img/头像.png');
+            margin-top: 40px;
+            margin-left: 20px;
+        }
+        .ziliao {
+            float: right;
+            margin-top: 20px;
+            width: 200px;
+            height: 60px;
+            background-image: url('img/编辑个人资料.png');
+            background-repeat: no-repeat;
+            background-color: white;
+        }
+        .zhuti {
+            float: left;
+            width: 690px;
+            height: 500px;
+            margin-top: 15px;
+            background-color: white;
+        }
+        .redanghang {
+            float: left;
+            width: 100%;
+            height: 50px;
+            border-bottom:1px solid #f6f6f6;
+            background-color: white;
+        }
+        .re {
+            float: left;
+            padding-top: 14px;
+            margin-left: 20px;
+            font-size: 16px;
+            text-align: center;
+            background-color: white;
+            
+        }
+        .dongtai {
+            float: left;
+            padding: 12px 0;
+            font-size: 20px;
+            color: #1a1a1a;
+            text-align: center;
+            margin-left: 10px;
+            background-color: white;
+        }
+        .gengduo {
+            float: right;
+            width: 100px;
+            height: 30px;
+            margin-top: 13px;
+            margin-right: 150px;
+            background-image: url('img/更多.png');
+            background-repeat: no-repeat;
+            background-color: white;
+        }
+        .wodedongtai {
+            width: 100%;
+            height: 50px;
+            background-color: white;
+            border-bottom: 1px solid #f6f6f6;           
+        }
+        .wodedongtai1 {
+            float: left;
+            display: block;
+            margin-left: 20px;
+            padding-top: 13px;
+            background-color: white;
+        }
+        .wenti {
+            float: left;
+            width: 100%;
+            height: 300px;
+            background-color: white;
+        }
+        .wenti1 {
+            float: left;
+            width: 120px;
+            height: 20px;
+            margin-left: 15px;
+            background-color: white;
+        }
+        .time {
+            width: 50px;
+            height: 30px;
+            float: right;
+            margin-right: 15px;
+            background-color: white;
+        }
+        .huati {
+            float: left;
+            width: 100%;
+            height: 300px;
+            background-color: white;
+        }
+        .huati1 {            
+            float: left;
+            margin-left: 15px;
+            background-color: white;
+        }
+        .time2 {           
+            background-color: white;
+        }
+        .huidalewenti {
+            margin-top: 20px;
+            background-color: white;
+        }
+        .guanzhulehuati {
+            width: 100%;
+            height: 40px;
+            margin-top: 20px;
+            background-color: white;
+        }
+        .gzneirong {
+            float: left;
+            width: 220px;
+            height: 150px;
+            margin-left: 15px;
+            background-image: url('img/工作.png');
+            background-repeat: no-repeat;
+            background-color: white;
+        }
+
+        /* 侧边栏 */
+        .you-lan {
+            float: right;
+            width: 360px;
+            height: 200px;
+            margin-top: 15px;
+            background-color: white;
+        }
+        .shuliang {
+            width: 80px;
+            height: 30px;
+            background-color: white;
+        }
+        .shuliang2 {
+            height: 30px;
+            width: 38px;
+            margin-top: 5px;
+            background-image: url("img/数量.png");           
+        }
+        .yu-e {
+            float: left;
+            width: 100%;
+            height: 30px;          
+            background-repeat: no-repeat;
+            margin-top: 10px;
+        }
+    </style>
+</head>
+<body>
+    <div>
+        <!-- 页眉 -->
+        <div class="AppHeader">
+            <a href="www.zhihu.com">
+                <div class="zhihu"></div>
+            </a>
+            <!-- 首页发现等你来答 -->
+            <ul class="AppHeader-Tabs">
+                <!--首页  -->
+                <li class="Tabs-item">
+                    <a href="https://www.zhihu.com" class="shouye-link">首页</a>
+                </li>
+                <!--发现 -->
+                <li class="Tabs-item">
+                    <a href="https://www.zhihu.com/explore" class="tabs-link">发现</a>
+                </li>
+                <!--等你来答  -->
+                <li class="Tabs-item">
+                    <a href="https://www.zhihu.com/question/waiting" class="tabs-link">等你来答</a>
+                </li>
+            </ul>
+            <!--页眉搜寻  -->
+            <div class="SearchBar">
+                <input type="text" width="99%" placeholder = "鸣人为什么喜欢小樱" class="Input" maxlength="100" 
+                autocomplete="off" role="combobox" aria-expanded="false" aria-autocomplete="list"
+                aria-activedescendant="AutoComplete2-topSearch--1" id="Popover1-toggle" aria-haspopup="true"
+                aria-owns="Popover1-content">
+                <!-- 搜索按钮 -->
+                <div class="Search-div"></div>
+            </div>
+            <!-- 提问按钮 -->
+            <button type="button" class="Button">提问</button>
+            <!-- 铃铛信息个人中心 -->
+            <div class="AppHeader-userInfo">
+                <!-- 铃铛 -->
+                <div class="lindang"></div>
+                <!-- 信息 -->
+                <div class="message"></div>
+                <!-- 个人中心 -->
+                <div class="AppHeader-profile"></div>
+            </div>
+        </div> 
+        <div class="content">
+            <div class="fenmian-img">
+                <div class="fenmian-img1"></div>
+                <div class="touxiang1"></div>
+            </div>
+            <div class="bianji">
+                <div class="name">小小怪下士</div>
+                <div class="xiangxi"></div>
+                <div class="ziliao"></div>
+            </div>
+            <!-- 主体 -->
+            <div class="zhuti">
+                <!-- 热导航 -->
+                <div class="redanghang">
+                    <div class="dongtai">动态</div>
+                    <div class="re">回答0</div>
+                    <div class="re">视频0</div>
+                    <div class="re">提问0</div>
+                    <div class="re">文章0</div>
+                    <div class="re">专栏0</div>
+                    <div class="re">想法0</div>
+                    <div class="gengduo"></div>
+                    <div></div>
+                </div>
+                <!-- 我的动态 -->
+                <div class="wodedongtai">
+                    <div style="width: 200px;height: 100%;background-color: white;">
+                        <span class="wodedongtai1">我的动态</span> 
+                    </div>
+                    
+                </div>
+
+                <!--回答了问题  -->
+                <div class="wenti">
+                    <div class="huidalewenti">
+                        <div class="wenti1">
+                            <span style="background-color: white;">回答了问题</span>
+                        </div>
+                        <div class="time">
+                            <span style="background-color: white;">06-10</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 关注了话题 -->
+                <div class="huati">
+                    <div class="guanzhulehuati">
+                        <div class="huati1">
+                            <span style="background-color: white;">关注了话题</span>
+                        </div>
+                        <div class="time2">
+                            <span style="background-color: white;float: right;margin-right: 15px;">2018-02-22</span>
+                        </div>                        
+                    </div>
+                    <div class="gzneirong"></div>
+                </div>                          
+            </div>
+
+            <!-- 侧边栏 -->
+            <div class="you-lan">
+                <!-- 收藏 -->
+                <div class="yu-e" style="position: relative;display: block;background-color: white;">
+                    <div style="margin-left: 10px; float: left; background-color: white;">关注话题</div>
+                    <div class="shuliang" style="margin-left: 68px; float: right; margin-top: -5px;">
+                        <div class="shuliang2"></div>
+                    </div>
+                </div>
+                <!-- 收藏 -->
+                <div class="yu-e" style="position: relative;display: block;background-color: white;">
+                    <div style="margin-left: 10px; float: left; background-color: white;">关注专栏</div>
+                    <div class="shuliang" style="margin-left: 68px; float: right; margin-top: -5px;">
+                        <div class="shuliang2"></div>
+                    </div>
+                </div>
+                <!-- 收藏 -->
+                <div class="yu-e" style="position: relative;display: block;background-color: white;">
+                    <div style="margin-left: 10px; float: left; background-color: white;">关注问题</div>
+                    <div class="shuliang" style="margin-left: 68px; float: right; margin-top: -5px;">
+                        <div class="shuliang2"></div>
+                    </div>
+                </div>
+                <!-- 收藏 -->
+                <div class="yu-e" style="position: relative;display: block;background-color: white;">
+                    <div style="margin-left: 10px; float: left; background-color: white;">关注收藏</div>
+                    <div class="shuliang" style="margin-left: 68px; float: right; margin-top: -5px;">
+                        <div class="shuliang2"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
