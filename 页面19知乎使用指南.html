@@ -1,0 +1,595 @@
+<!DOCTYPE html>
+<html lang="en">
+
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Document</title>
+        <style>
+            * {
+                padding: 0%;
+                margin: 0%;
+                background-color: #f6f6f6;
+            }
+
+            .AppHeader {
+                position: relative;
+                display: -webkit-box;
+                display: -ms-flexbox;
+                display: flex;
+                width: 100%;
+                height: 52px;
+                padding: 0 16px;
+                margin: 0 auto;
+                -webkit-box-align: center;
+                -ms-flex-align: center;
+                align-items: center;
+                background-color: white;
+
+            }
+
+            .zhihu {
+                width: 88px;
+                height: 41px;
+                background-image: url("img/首页.png");
+                margin-left: 225px;
+                background-color: white;
+            }
+
+            .AppHeader-Tabs {
+                border-bottom: 1px solid #f6f6f6;
+                border-bottom: none;
+                display: -webkit-box;
+                display: -ms-flexbox;
+                display: flex;
+                margin: 0 23px;
+            }
+
+            li {
+                list-style-type: none;
+                background-color: white;
+            }
+
+            a {
+                color: inherit;
+                text-decoration: none;
+                background-color: white;
+            }
+
+            .Tabs-item {
+                padding: 0 20px;
+                display: inline-block;
+            }
+
+            .shouye-link {
+                color: #444;
+                font-weight: 600;
+                font-synthesis: style;
+                font-size: 15px;
+                position: relative;
+                display: inline-block;
+                padding: 14px 0px;
+                font-size: 16px;
+                line-height: 22px;
+                color: #1a1a1a;
+                text-align: center;
+            }
+
+            .tabs-link {
+                color: #8590a6;
+                font-size: 15px;
+                position: relative;
+                display: inline-block;
+                padding: 14px 0;
+                font-size: 16px;
+                line-height: 22px;
+                text-align: center;
+            }
+
+            div {
+                display: block;
+            }
+
+            .SearchBar {
+                width: 326px;
+                height: 34px;
+                background-color: #f6f6f6;
+                position: relative;
+
+            }
+
+            /* 提问按钮 */
+            .Button {
+                display: inline-block;
+                padding: 0 16px;
+                font-size: 14px;
+                line-height: 32px;
+                color: hsl(220, 79%, 50%);
+                text-align: center;
+                cursor: pointer;
+                background: none;
+                border: 1px solid;
+                border-radius: 3px;
+                color: #fff;
+                background-color: #0084ff;
+                margin-left: 16px;
+            }
+
+            .Input {
+                -webkit-box-flex: 1;
+                -ms-flex: 1 1;
+                flex: 1 1;
+                padding: 0;
+                overflow: hidden;
+                font-family: inherit;
+                font-size: inherit;
+                font-weight: inherit;
+                background: transparent;
+                /* input在输入时不显示边框 */
+                border: 0;
+                outline: none;
+
+
+                resize: none;
+                color: #8590a6;
+                height: 24px;
+                line-height: 24px;
+            }
+
+            input {
+                margin-top: 5px;
+                margin-left: 15px;
+            }
+
+            .Search-div {
+                width: 47px;
+                height: 27px;
+                background-image: url("img/搜索.png");
+                float: right;
+                margin-top: 5px;
+            }
+
+            .AppHeader-userInfo {
+                background-color: white;
+            }
+
+            .lindang {
+                display: inline-block;
+                position: relative;
+                width: 50px;
+                height: 30px;
+                background-image: url("img/铃铛.png");
+                margin-left: 96px;
+                margin-bottom: 15px;
+                background-color: white;
+            }
+
+            .message {
+                display: inline-block;
+                position: relative;
+                width: 50px;
+                height: 40px;
+                background-image: url("img/信息消息.png");
+                margin-left: 13px;
+                background-repeat: no-repeat;
+                margin-top: 8px;
+                background-color: white;
+
+            }
+
+            .AppHeader-profile {
+                display: inline-block;
+                position: relative;
+                width: 50px;
+                height: 40px;
+                background-image: url("img/个人中心.png");
+                margin-left: 15px;
+                background-repeat: no-repeat;
+                margin-bottom: 3px;
+                background-color: white;
+            }
+
+            .zhihu-zn {
+                width: 100%;
+                height: 150px;
+                background-color: white;
+                border: 2px solid #f6f6f6;
+            }
+
+            .zhihu-zn2 {
+                float: left;
+                width: 80px;
+                height: 28px;
+                margin-left: 265px;
+                background-color: skyblue;
+                color: blue;
+                padding: 3px 7px;
+                margin-top: 20px;
+                box-sizing: border-box;
+                border-radius: 5px;
+                
+            }
+
+            .wenda {
+                float: left;
+                width: 340px;
+                height: 30px;
+                margin-left: 265px;
+                font-weight: 800;
+                font-size: 20px;
+                margin-top: 50px;
+                margin-left: -80px;
+                background-color: white;
+            }
+
+            .wenti {
+                float: left;
+                width: 100px;
+                height: 40px;
+                background-color: blue;
+                color: white;
+                margin-top: 100px;
+                margin-left: -340px;
+                padding: 8px 18px;
+                box-sizing: border-box;
+            }
+
+            .huida {
+                float: left;
+                width: 110px;
+                height: 40px;
+                background-color: white;
+                color: gray;
+                margin-top: 100px;
+                margin-left: -220px;
+                padding: 8px 18px;
+                box-sizing: border-box;
+                border: 2px solid #f6f6f6;
+            }
+
+            .guanzhu {
+                float: right;
+                width: 50px;
+                height: 30px;
+                margin-top: 20px;
+                margin-right: 400px;
+                color: gray;
+                background-color: white;
+
+            }
+
+            .guanjia {
+                float: left;
+                width: 800px;
+                height: 500px;
+                margin-left: 245px;
+                margin-top: 10px;
+                background-color: white;
+            }
+
+            .guanjia-x {
+                float: left;
+                width: 50px;
+                height: 50px;
+                margin-top: 15px;
+                margin-left: 20px;
+                background-image: url('img/知乎小管家.png');
+                background-repeat: no-repeat;
+                background-color: white;
+            }
+
+            .guanjia-x2 {
+                float: left;
+                width: 120px;
+                height: 30px;
+                margin-top: 15px;
+                margin-left: 10px;
+                font-weight: 800;
+                background-color: white;
+            }
+
+            .guanfang {
+                float: left;
+                width: 120px;
+                height: 30px;
+                color: gray;
+                margin-top: 40px;
+                margin-left: -120px;
+                background-color: white;
+            }
+
+            .zantong {
+                width: 180px;
+                margin-top: 70px;
+                margin-left: 20px;
+                background-color: white;
+                color: gray;
+            }
+
+            .yuanze {
+                width: 220px;
+                margin-top: 10px;
+                margin-left: 20px;
+                background-color: white;
+                font-weight: 800;
+                text-decoration: underline;
+            }
+
+            .rumen {
+                width: 220px;
+                margin-top: 30px;
+                margin-left: 20px;
+                background-color: white;
+            }
+
+            .rumen2 {
+                width: 320px;
+                margin-top: 30px;
+                margin-left: 20px;
+                background-color: white;
+            }
+
+            .i {
+                text-decoration: underline;
+            }
+
+            .you-lan {
+                width: 300px;
+                height: 800px;
+                float: right;
+                margin-top: 10px;
+                background-color: white;
+                margin-right: 170px;
+            }
+
+            .zuozhe {
+                width: 100%;
+                height: 60px;
+                background-color: white;
+                padding: 15px 20px;
+                box-sizing: border-box;
+                font-weight: 800;
+                border: 2px solid #f6f6f6;
+                border-bottom: 0;
+            }
+
+            .zhihu-guanjia {
+                width: 100%;
+                height: 120px;
+                background-color: white;
+                border: 2px solid #f6f6f6;
+                border-bottom: 0;
+            }
+
+            .guanjia-d {
+                float: left;
+                width: 80px;
+                height: 80px;
+                margin-top: 15px;
+                margin-left: 15px;
+                background-image: url('img/知乎大管家.png');
+                background-repeat: no-repeat;
+                background-color: white;
+            }
+            .guanjia-d2 {
+                float: left;
+                margin-top: 30px;
+                font-weight: 800;
+                font-size: 18px;
+                background-color: white;
+            }
+            .guanjia-d3 {
+                float: left;
+                margin-top: 5px;
+                background-color: white;
+            }
+            .guanfang-hao {
+                width: 100%;
+                height: 60px;
+                background-color: white;
+                background-color: white;
+                border: 2px solid #f6f6f6;
+                color: gray;
+                box-sizing: border-box;
+                padding: 20px 40px;
+            }
+            .huida2 {
+                width: 100%;
+                height: 150px;
+                background-color: white;
+            }
+            .huida3 {
+                float: left;
+                width: 50px;
+                height: 20px;
+                color: gray;
+                margin-top: 30px;
+                margin-left: 45px;
+                background-color: white;
+            }
+            .huida4 {
+                float: left;
+                width: 50px;
+                height: 20px;
+                font-weight: 800;
+                margin-top: 5px;
+                margin-left: 45px;
+                background-color: white;
+            }
+            .guanzhuta {
+                float: left;
+                width: 120px;
+                height: 50px;
+                padding: 13px 20px;
+                margin-top: 20px;
+                margin-left: 20px;
+                box-sizing: border-box;
+                border: 2px solid #f6f6f6;
+                background-color: blue;
+                color: white;
+            }
+            .guanzhuta2 {
+                float: left;
+                width: 120px;
+                height: 50px;
+                padding: 13px 20px;
+                margin-top: 20px;
+                margin-left: 20px;
+                box-sizing: border-box;
+                border: 2px solid #f6f6f6;
+                background-color: white;
+                color: gray;
+            }
+            .xiangguan {
+                width: 100%;
+                height: 300px;
+                background-color: white;
+                margin-top: 10px;
+            }
+            .xiangguan2 {
+                width: 100%;
+                height: 60px;
+                font-weight: 800;
+                padding: 15px 20px;
+                background-color: white;
+                border: 2px solid #f6f6f6;
+                box-sizing: border-box;
+            }
+            .wenti2 {
+                width: 100%;
+                height: 100%;
+                background-color: white;
+            }
+            .zengjia {
+                width: 90%;
+                height: 30px;
+                color: blue;
+                margin-top: 15px;
+                margin-left: 10px;
+                background-color: white;
+            }
+        </style>
+    </head>
+
+    <body>
+        <!-- 页眉 -->
+        <div class="AppHeader">
+            <a href="www.zhihu.com">
+                <div class="zhihu"></div>
+            </a>
+            <!-- 首页发现等你来答 -->
+            <ul class="AppHeader-Tabs">
+                <!--首页  -->
+                <li class="Tabs-item">
+                    <a href="https://www.zhihu.com" class="shouye-link">首页</a>
+                </li>
+                <!--发现 -->
+                <li class="Tabs-item">
+                    <a href="https://www.zhihu.com/explore" class="tabs-link">发现</a>
+                </li>
+                <!--等你来答  -->
+                <li class="Tabs-item">
+                    <a href="https://www.zhihu.com/question/waiting" class="tabs-link">等你来答</a>
+                </li>
+            </ul>
+            <!--页眉搜寻  -->
+            <div class="SearchBar">
+                <input type="text" width="99%" placeholder="鸣人为什么喜欢小樱" class="Input" maxlength="100" autocomplete="off"
+                    role="combobox" aria-expanded="false" aria-autocomplete="list"
+                    aria-activedescendant="AutoComplete2-topSearch--1" id="Popover1-toggle" aria-haspopup="true"
+                    aria-owns="Popover1-content">
+                <!-- 搜索按钮 -->
+                <div class="Search-div"></div>
+            </div>
+            <!-- 提问按钮 -->
+            <button type="button" class="Button">提问</button>
+            <!-- 铃铛信息个人中心 -->
+            <div class="AppHeader-userInfo">
+                <!-- 铃铛 -->
+                <div class="lindang"></div>
+                <!-- 信息 -->
+                <div class="message"></div>
+                <!-- 个人中心 -->
+                <div class="AppHeader-profile"></div>
+            </div>
+        </div>
+
+        <!-- 知乎指南 -->
+        <div class="zhihu-zn">
+            <div class="zhihu-zn2">知乎指南</div>
+            <div class="wenda">属于「知乎官方指南」的问答有哪些？</div>
+            <div class="wenti">关注问题</div>
+            <div class="huida">邀请回答</div>
+            <div class="huida" style="margin-left: -90px;border: 0;">70条评论</div>
+            <div class="huida" style="margin-left: 30px;border: 0;">分享</div>
+            <div class="guanzhu">关注者</div>
+            <div class="guanzhu" style="margin-right: 308px;margin-top: -30px;">被浏览</div>
+            <div class="guanzhu" style="margin-top: -5px;">15,072</div>
+            <div class="guanzhu" style="margin-right: 320px;margin-top: -30px;">10,985,480</div>
+        </div>
+
+        <!-- 知乎小管家 -->
+        <div class="guanjia">
+            <div class="guanjia-x"></div>
+            <div class="guanjia-x2">知乎小管家</div>
+            <div class="guanfang">知乎官方账号</div>
+            <div class="zantong">10,061人赞同了该回答</div>
+            <div class="yuanze">知乎社区的基本原则是什么？</div>
+            <div class="rumen">[知乎入门]</div>
+            <ul class="rumen2">
+                <li class="i">如何使用知乎？</li>
+                <li class="i">在知乎不可以做哪些事？</li>
+                <li class="i">在知乎上，什么是不友善内容？</li>
+                <li class="i">知乎上的不友善内容会被怎样处理？</li>
+            </ul>
+            <div class="rumen">[新增]</div>
+            <ul class="rumen2">
+                <li class="i">关于垃圾广告信息处理的细则</li>
+                <li class="i">关于滥用产品功能处理的细则</li>
+                <li class="i">关于科学类不实信息处理的细则</li>
+                <li class="i">关于封建迷信内容处理的细则</li>
+                <li class="i">个人认证常见问题汇总</li>
+                <li class="i">关于站内侵权内容的处理细则</li>
+            </ul>
+        </div>
+
+        <!-- 右边栏 -->
+        <div class="you-lan">
+            <div class="zuozhe">关于作者</div>
+            <div class="zhihu-guanjia">
+                <div class="guanjia-d"></div>
+                <div class="guanjia-d2">知乎小管家</div>
+                <div class="guanjia-d3">超厉害！知乎百事通</div>
+            </div>
+            <div class="guanfang-hao">知乎官方账号</div>
+            <div class="huida2">
+                <div class="huida3">回答</div>
+                <div class="huida3">文章</div>
+                <div class="huida3">关注者</div>
+                <div class="huida4">77</div>
+                <div class="huida4">268</div>
+                <div class="huida4">377,927</div>
+                <div class="guanzhuta">+关注他</div>
+                <div class="guanzhuta2">+发私信</div>
+            </div>
+            <div class="xiangguan">
+                <div class="xiangguan2">相关问题</div>
+                <div class="wenti2">
+                    <div class="zengjia">知乎如何在个人主页增加自己关注的话题？</div>
+                    <div class="zengjia">在知乎上怎么邀请人回答问题？</div>
+                    <div class="zengjia">知乎有茂名的吗？</div>
+                    <div class="zengjia">知乎的消息为什么不能删除？</div>
+                    <div class="zengjia">如何在知乎添加新关注话题？？</div>
+                </div>
+
+
+
+                
+            </div>
+
+            
+        </div>
+
+    </body>
+
+</html>
