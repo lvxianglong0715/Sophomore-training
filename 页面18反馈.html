@@ -1,0 +1,438 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            padding: 0%;
+            margin: 0%;
+            background-color: #f6f6f6;
+        }
+        .AppHeader{
+            position: relative;
+            display: -webkit-box;
+            display: -ms-flexbox;
+            display: flex;
+            width: 100%;
+            height: 52px;
+            padding: 0 16px;
+            margin: 0 auto;
+            -webkit-box-align: center;
+            -ms-flex-align: center;
+            align-items: center;
+            background-color: white;
+
+        }
+        .zhihu{
+            width: 88px;
+            height: 41px;
+            background-image: url("img/首页.png");
+            margin-left: 225px;
+            background-color:white;
+        }
+        .AppHeader-Tabs{
+            border-bottom: 1px solid #f6f6f6;
+            border-bottom: none;
+            display: -webkit-box;
+            display: -ms-flexbox;
+            display: flex;
+            margin: 0 23px;
+        }
+        li {
+            list-style-type: none;
+            background-color: white;
+        }
+        a {
+            color: inherit;
+            text-decoration: none;
+            background-color: white;
+        }
+        .Tabs-item {
+            padding: 0 20px;
+            display: inline-block;
+        }
+        .shouye-link {
+            color: #444;
+            font-weight: 600;
+            font-synthesis: style;
+            font-size: 15px;
+            position: relative;
+            display: inline-block;
+            padding: 14px 0px;
+            font-size: 16px;
+            line-height: 22px;
+            color: #1a1a1a;
+            text-align: center;
+        }
+        .tabs-link {
+            color: #8590a6;
+            font-size: 15px;
+            position: relative;
+            display: inline-block;
+            padding: 14px 0;
+            font-size: 16px;
+            line-height: 22px;
+            text-align: center;
+        }
+        div {
+            display: block;
+        }
+
+        .SearchBar {
+            width: 326px;
+            height: 34px;
+            background-color: #f6f6f6;
+            position: relative;
+            
+        }
+
+        /* 提问按钮 */
+        .Button {
+            display: inline-block;
+            padding: 0 16px;
+            font-size: 14px;
+            line-height: 32px;
+            color: hsl(220, 79%, 50%);
+            text-align: center;
+            cursor: pointer;
+            background: none;
+            border: 1px solid ;
+            border-radius: 3px;
+            color: #fff;
+            background-color: #0084ff;
+            margin-left: 16px;
+        }
+
+        .Input {
+            -webkit-box-flex: 1;
+            -ms-flex: 1 1;
+            flex: 1 1;
+            padding: 0;
+            overflow: hidden;
+            font-family: inherit;
+            font-size: inherit;
+            font-weight: inherit;
+            background: transparent;
+            /* input在输入时不显示边框 */
+            border: 0;
+            outline: none;
+
+
+            resize: none;
+            color: #8590a6;
+            height: 24px;
+            line-height: 24px;
+        }
+        input {
+            margin-top: 5px;
+            margin-left: 15px;
+        }
+        .Search-div {
+            width: 47px;
+            height: 27px;
+            background-image: url("img/搜索.png");
+            float: right;
+            margin-top: 5px;
+        }
+        .AppHeader-userInfo {
+            background-color: white;
+        }
+        .lindang {
+            display: inline-block;
+            position: relative;
+            width: 50px;
+            height: 30px;
+            background-image: url("img/铃铛.png");
+            margin-left: 96px;
+            margin-bottom: 15px;
+            background-color: white;
+        }
+        .message {
+            display: inline-block;
+            position: relative;
+            width: 50px;
+            height: 40px;
+            background-image: url("img/信息消息.png");
+            margin-left: 13px;
+            background-repeat: no-repeat;
+            margin-top: 8px;
+            background-color: white;
+            
+        }
+        .AppHeader-profile {
+            display: inline-block;
+            position: relative;
+            width: 50px;
+            height: 40px;
+            background-image: url("img/个人中心.png");
+            margin-left: 15px;
+            background-repeat: no-repeat;
+            margin-bottom: 3px;
+            background-color: white;
+        }
+        .content {
+            float: left;
+            width: 1060px;
+            height: 1000px;
+            background-color: white;
+            margin-left: 245px;
+            margin-top: 10px;
+        }
+        .help-heart {
+            width: 100%;
+            height: 80px;
+            background-color: white;
+            border:2px solid #f6f6f6;
+        }
+        .help-heart2 {
+            float: left;
+            width: 100px;
+            height: 30px;
+            font-weight: 800;
+            font-size: 20px;
+            margin-top: 20px;
+            margin-left: 20px;
+            background-color: white;
+        }
+        .wenti-fen {
+            width: 40%;
+            height: 60px;
+            background-color: white;
+            border: 2px solid #f6f6f6;
+            border-top: 0;
+        }
+        .wenti-fen2 {
+            float: left;
+            margin-top: 15px;
+            margin-left: 20px;
+            font-weight: 800;
+            background-color: white;
+        }
+        .changjian-wen {
+            float: left;
+            margin-top: 15px;
+            margin-left: 20px;
+            background-color: white;
+        }
+        .qitawenti {
+            float: left;
+            margin-top: 15px;
+            margin-left: 20px;
+            font-weight: 800;
+            background-color: white;
+        }
+        .return {
+            float: right;
+            width: 60%;
+            height: 60px;
+            margin-top: -560px;
+            background-color: white;
+            border:2px solid #f6f6f6;
+            border-bottom: 2px solid #f6f6f6;
+        }
+        .fanhui {
+            float: left;
+            width: 120px;
+            height: 30px;
+            color:gray;
+            margin-top: 15px;
+            margin-left: 10px;
+            background-color: white;
+        }
+        .fanhui-img {
+            float: left;
+            width: 30px;
+            height: 30px;
+            margin-top: 15px;
+            margin-left: 30px;
+            background-image: url('img/返回列表.png');
+        }
+        .zhinan {
+            float: right;
+            width: 59.8%;
+            height: 760px;
+            margin-top: -500px;
+            background-color: white;
+            border-bottom: 2px solid #f6f6f6;
+        }
+        .zhinan2 {
+            width: 130px;
+            height: 40px;
+            font-weight: 800;
+            font-size: 20px;
+            margin-left: 25px;
+            margin-top: 30px;
+            background-color: white;
+        }
+        .shuoming {
+            margin-left: 25px;
+            background-color: white;
+        }
+        .shuoming2 {
+            margin-top: 30px;
+            margin-left: 25px;
+            background-color: white;
+        }
+        .zhinan-img {
+            float: left;
+            width: 500px;
+            height: 100px;
+            margin-top: 50px;
+            margin-left: 70px;
+            background-image: url('img/知乎使用指南.png');
+            background-repeat: no-repeat;
+            background-color: white;
+        }
+        .zhinan-img2 {
+            float: left;
+            width: 300px;
+            height: 300px;
+            margin-top: 50px;
+            margin-left: 170px;
+            background-image: url('img/知乎使用指南2.png');
+            background-repeat: no-repeat;
+            background-color: white;
+        }
+        .jiejue {
+            float: right;
+            width: 60%;
+            height: 60px;
+            background-color: white;
+            border: 2px solid #f6f6f6;
+            border-top: 0;
+        }
+        .jie1 {
+            float: left;
+            width: 180px;
+            height: 30px;
+            color: royalblue;
+            margin-top: 20px;
+            margin-left: 20px;
+            padding: 5px 50px;
+            background-color: skyblue;
+            box-sizing: border-box;
+        }
+        .fankiu {
+            float: left;
+            width: 180px;
+            height: 30px;
+            margin-top: 20px;
+            margin-left: 20px;
+            padding: 3px 50px;
+            background-color: white;
+            box-sizing: border-box;
+            border: 2px solid rgb(133, 144, 166);
+        }
+    </style>
+</head>
+<body>
+        <!-- 页眉 -->
+        <div class="AppHeader">
+            <a href="www.zhihu.com">
+                <div class="zhihu"></div>
+            </a>
+            <!-- 首页发现等你来答 -->
+            <ul class="AppHeader-Tabs">
+                <!--首页  -->
+                <li class="Tabs-item">
+                    <a href="https://www.zhihu.com" class="shouye-link">首页</a>
+                </li>
+                <!--发现 -->
+                <li class="Tabs-item">
+                    <a href="https://www.zhihu.com/explore" class="tabs-link">发现</a>
+                </li>
+                <!--等你来答  -->
+                <li class="Tabs-item">
+                    <a href="https://www.zhihu.com/question/waiting" class="tabs-link">等你来答</a>
+                </li>
+            </ul>
+            <!--页眉搜寻  -->
+            <div class="SearchBar">
+                <input type="text" width="99%" placeholder = "鸣人为什么喜欢小樱" class="Input" maxlength="100" 
+                autocomplete="off" role="combobox" aria-expanded="false" aria-autocomplete="list"
+                aria-activedescendant="AutoComplete2-topSearch--1" id="Popover1-toggle" aria-haspopup="true"
+                aria-owns="Popover1-content">
+                <!-- 搜索按钮 -->
+                <div class="Search-div"></div>
+            </div>
+            <!-- 提问按钮 -->
+            <button type="button" class="Button">提问</button>
+            <!-- 铃铛信息个人中心 -->
+            <div class="AppHeader-userInfo">
+                <!-- 铃铛 -->
+                <div class="lindang"></div>
+                <!-- 信息 -->
+                <div class="message"></div>
+                <!-- 个人中心 -->
+                <div class="AppHeader-profile"></div>
+            </div>
+        </div> 
+        
+    
+        <!-- 内容 -->
+        <div class="content">
+            <div class="help-heart">
+                <div class="help-heart2">帮助中心</div>
+            </div>
+
+            <!-- 问题分类 -->
+            <div class="wenti-fen">
+                <div class="wenti-fen2">问题分类</div>
+                <div class="changjian-wen">常见问题</div>
+            </div>
+            <div class="wenti-fen">
+                <div class="changjian-wen">盐选会员（会员/Live/盐选专栏/电子书）</div>
+            </div>
+            <div class="wenti-fen">
+                <div class="changjian-wen">支付服务（自动续费/知乎币/余额/提现）</div>
+            </div>
+            <div class="wenti-fen">
+                <div class="changjian-wen">举报申诉（规范/举报/申诉/禁言）</div>
+            </div>
+            <div class="wenti-fen">
+                <div class="changjian-wen">帐号服务（解换绑/帐号安全/帐号异常）</div>
+            </div>
+            <div class="wenti-fen">
+                <div class="changjian-wen">社区产品（问答/文章/专栏/收藏）</div>
+            </div>
+            <div class="wenti-fen">
+                <div class="changjian-wen">认证申请（个人认证/机构号）</div>
+            </div>
+            <div class="wenti-fen">
+                <div class="changjian-wen">隐私中心（隐私政策/协议）</div>
+            </div>
+            <div class="wenti-fen" style="background-color: #f6f6f6;">
+                <div class="wenti-fen2" style="background-color: #f6f6f6;">其他问题</div>
+            </div>
+
+
+            <!-- 返回列表 -->
+            <div class="return">
+                <div class="fanhui-img"></div>
+                <div class="fanhui">返回列表</div>
+            </div>
+
+            <!-- 知乎使用指南 -->
+            <div class="zhinan">
+                <div class="zhinan2">知乎使用指南</div>
+                <div class="shuoming">欢迎来到知乎，一个中文互联网综合性知识内容平台</div>
+                <div class="shuoming2">以「让每个人高效获得可信赖的解答」为品牌使命和北极星。</div>
+                <div class="shuoming2">在这里，无论是满足好奇，或者解答疑惑，你都有机会找到可信赖的解答。</div>
+                <div class="shuoming2">关于「知乎怎么玩」也许你有很多好奇，不如就先从这里了解，开启你的知乎之旅吧</div>
+                <div class="zhinan-img"></div>
+                <div class="zhinan-img2"></div>
+            </div>
+
+            <!-- 反馈 -->
+            <div class="jiejue">
+                <div class="jie1">已解决</div>
+                <div class="jie1" style="background-color: pink;">未解决</div>
+                <div class="fankiu">我要反馈</div>
+            </div>
+        </div>
+
+
+</body>
+</html>
